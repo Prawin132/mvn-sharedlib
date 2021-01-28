@@ -10,14 +10,15 @@ def call(Map pipelineParams) {
             stage('build') {
                 steps {
                     sh 'mvn -B -DskipTests clean package'
-                    echo 'Building....'
                 }
             }
 
             stage('test') {
                 steps {
-                    sh 'mvn test'
-                    echo 'Testing...'
+                    parallel (
+                    "unit tests": { sh 'mvn test' },
+                    "integration tests": { sh 'mvn integration-test' }
+                )
                 }
             }
         }
