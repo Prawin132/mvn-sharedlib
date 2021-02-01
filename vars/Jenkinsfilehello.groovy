@@ -8,6 +8,8 @@ def call(body) {
     
     println "FIRST_NAME: ${FIRST_NAME}"
     println "LAST_NAME: ${LAST_NAME}"
+    env.FIRST_NAME = FIRST_NAME
+    env.LAST_NAME = LAST_NAME
     
     pipeline {
     agent any
@@ -15,7 +17,7 @@ def call(body) {
     stages {
         stage('print') {
             steps {
-                echo "Hello ${FIRST_NAME} ${LAST_NAME}"
+                echo "Hello ${env.FIRST_NAME} ${env.LAST_NAME}"
             }
         }
     }
