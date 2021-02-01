@@ -13,12 +13,9 @@ def call(Map pipelineParams) {
                 }
             }
 
-            stage('test') {
+            stage('copy') {
                 steps {
-                    parallel (
-                    "unit tests": { sh 'mvn test' },
-                    "integration tests": { sh 'mvn integration-test' }
-                )
+                    sh 'mv target/*.war target/variable-name.war'
                 }
             }
         }
