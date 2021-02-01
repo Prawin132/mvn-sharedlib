@@ -18,9 +18,6 @@ def call(body) {
     
     pipeline {
     agent any
-        options {
-        copyArtifactPermission('job1,job2,...');
-    }
 
     stages {
         stage('build'){
@@ -30,7 +27,7 @@ def call(body) {
         }
         stage('copy') {
             steps {
-                sh "cp webapp/target/*.war webapp/target/${PACKAGE_NAME}.war'
+                sh "mv webapp/target/*.war webapp/target/${PACKAGE_NAME}.war'
             }
         }
     }
