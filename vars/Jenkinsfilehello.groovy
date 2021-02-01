@@ -1,7 +1,10 @@
 def call(Map pipelineParams) {
     pipeline {
     agent any
-        String FIRST_NAME = pipeline_params.FIRST_NAME != '' ? pipeline_params.FIRST_NAME : 'Praveen'
+        String FIRST_NAME = 'Praveen'
+        if(pipeline_params.FIRST_NAME){
+             FIRST_NAME=pipeline_params.FIRST_NAME
+        }
     environment {
         
         LAST_NAME = 'K'
