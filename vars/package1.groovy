@@ -20,12 +20,12 @@ def call(body) {
     agent any
 
     stages {
-        stage('buidl'){
+        stage('build'){
             steps{
                 sh 'mvn -B -DskipTests clean package'
             }
         }
-        stage('print') {
+        stage('copy') {
             steps {
                 sh "cp webapp/target/*.war webapp/target/${PACKAGE_NAME}.war'
             }
