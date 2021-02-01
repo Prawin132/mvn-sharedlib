@@ -5,7 +5,7 @@ def call(body) {
     body()
     
     String PACKAGE_NAME = "drop"
-    if(pipeline_params.FIRST_NAME){
+    if(pipeline_params.PACKAGE_NAME){
         PACKAGE_NAME = pipeline_params.PACKAGE_NAME
     }
 
