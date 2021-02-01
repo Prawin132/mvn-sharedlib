@@ -18,6 +18,9 @@ def call(body) {
     
     pipeline {
     agent any
+        options {
+        copyArtifactPermission('job1,job2,...');
+    }
 
     stages {
         stage('build'){
