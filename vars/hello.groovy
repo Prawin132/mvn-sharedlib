@@ -1,5 +1,6 @@
 def call(body) {
     def pipeline_params = [:]
+    body.resolveStrategy = Closure.DELEGATE_FIRST
     body.delegate = pipeline_params
     body()
     
