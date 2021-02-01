@@ -1,38 +1,35 @@
+
 def call(body) {
     def pipeline_params = [:]
     body.resolveStrategy = Closure.DELEGATE_FIRST
     body.delegate = pipeline_params
     body()
     
-    String PACKAGE_NAME = "drop"
+    String PACKAGE_NAME = "Praveen"
+
     if(pipeline_params.PACKAGE_NAME){
         PACKAGE_NAME = pipeline_params.PACKAGE_NAME
     }
-
-     
+    
+    
     env.PACKAGE_NAME = PACKAGE_NAME
     println "PACKAGE_NAME: ${env.PACKAGE_NAME}"
    
     
     pipeline {
-        agent any
+    agent any
 
-        tools {
-            maven 'maven-3.6.0'
-        }
-
-        stages {
-            stage('build') {
-                steps {
-                    sh 'mvn -B -DskipTests clean package'
-                }
+    stages {
+        stage('buidl'){
+            steps{
+                sh 'mvn -B -DskipTests clean package'
             }
-
-            stage('copy') {
-                steps {
-                    sh 'mv webapp/target/*.war webapp/target/${PACKAGE_NAME}.war'
-                }
+        }
+        stage('print') {
+            steps {
+                sh "cp webapp/target/*.war webapp/target/${PACKAGE_NAME}.war'
             }
         }
     }
+}
 }
