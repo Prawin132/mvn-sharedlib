@@ -4,8 +4,8 @@ def call(body) {
     body.delegate = pipeline_params
     body()
     
-    String FIRST_NAME = "default"
-    String LAST_NAME = "default"
+    String FIRST_NAME = "Praveen"
+    String LAST_NAME = "K"
     if(pipeline_params.FIRST_NAME){
         FIRST_NAME = pipeline_params.FIRST_NAME
     }
