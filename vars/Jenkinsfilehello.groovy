@@ -1,4 +1,4 @@
-def call(Map pipelineParams) {
+def call(body) {
     
         String FIRST_NAME = 'Praveen'
         if(pipeline_params.FIRST_NAME){
