@@ -27,8 +27,7 @@ def call(body) {
         }
         stage('copy') {
             steps {
-                pwd
-                //sh "mv webapp/target/*.war webapp/target/drop.war'
+                sh "mv target/*.war target/drop.war'
             }
         }
     }
