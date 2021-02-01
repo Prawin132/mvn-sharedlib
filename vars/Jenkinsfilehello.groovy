@@ -4,7 +4,7 @@ def call(Map pipelineParams) {
         String FIRST_NAME = pipeline_params.FIRST_NAME != '' ? pipeline_params.FIRST_NAME : 'Praveen'
     environment {
         
-        //LAST_NAME = 'K'
+        LAST_NAME = 'K'
     }
 
     stages {
