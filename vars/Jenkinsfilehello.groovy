@@ -1,9 +1,9 @@
 def call(Map pipelineParams) {
     pipeline {
     agent any
-
-    environment {
         String FIRST_NAME = pipeline_params.FIRST_NAME != '' ? pipeline_params.FIRST_NAME : 'Praveen'
+    environment {
+        
         //LAST_NAME = 'K'
     }
 
