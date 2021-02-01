@@ -3,7 +3,7 @@ def call(Map pipelineParams) {
     agent any
 
     environment {
-        FIRST_NAME = pipeline_params.FIRST_NAME != null ? pipeline_params.FIRST_NAME : 'Praveen'
+        FIRST_NAME = pipeline_params.FIRST_NAME != '' ? pipeline_params.FIRST_NAME : 'Praveen'
         LAST_NAME = 'K'
     }
 
