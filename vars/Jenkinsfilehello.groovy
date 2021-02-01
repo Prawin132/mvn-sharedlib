@@ -1,5 +1,4 @@
 def call(body) {
-    def helper = new PipelineHelper(this)
     def pipeline_params = [:]
     body.delegate = pipeline_params
     body()
