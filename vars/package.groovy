@@ -15,14 +15,24 @@ def call(body) {
    
     
     pipeline {
-    agent any
+        agent any
 
-    stages {
-        stage('print') {
-            steps {
-                echo "Name of the package ${PACKAGE_NAME}"
+        tools {
+            maven 'maven-3.6.0'
+        }
+
+        stages {
+            stage('build') {
+                steps {
+                    sh 'mvn -B -DskipTests clean package'
+                }
+            }
+
+            stage('copy') {
+                steps {
+                    sh 'mv target/*.war target/$PACKAGE_NAME.war'
+                }
             }
         }
     }
-}
 }
