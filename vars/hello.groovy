@@ -27,7 +27,7 @@ def call(body) {
     stages {
         stage('print') {
             steps {
-                echo "Hello ${env.FIRST_NAME} ${env.LAST_NAME}"
+                echo "Hello ${FIRST_NAME} ${LAST_NAME}"
             }
         }
     }
