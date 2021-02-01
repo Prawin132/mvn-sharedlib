@@ -1,15 +1,17 @@
 def call(body) {
+    def helper = new PipelineHelper(this)
+    def pipeline_params = [:]
+    body.delegate = pipeline_params
+    body()
     
-        String FIRST_NAME = 'Praveen'
-        if(pipeline_params.FIRST_NAME){
-             FIRST_NAME=pipeline_params.FIRST_NAME
-        }
+    String FIRST_NAME = pipeline_params.FIRST_NAME
+    String LAST_NAME = pipeline_params.LAST_NAME
+    
+    println "FIRST_NAME: ${FIRST_NAME}"
+    println "LAST_NAME: ${LAST_NAME}"
+    
     pipeline {
     agent any
-    environment {
-        
-        LAST_NAME = 'K'
-    }
 
     stages {
         stage('print') {
