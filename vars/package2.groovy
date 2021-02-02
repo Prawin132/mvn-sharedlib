@@ -12,7 +12,7 @@ def call(body) {
 		stage('prepare') {
             steps {
                script {
-                   def props = readProperties file:"/var/lib/jenkins/workspace/${JOB_NAME}@libs/sharedlib/vars/properties.txt";
+                   def props = readProperties file:"/var/lib/jenkins/workspace/${JOB_NAME}@libs/sharedlib/vars/${myprop}.txt";
                       env['PACKAGE_NAME'] = props['WAR_NAME'];
 
                 }
