@@ -5,7 +5,7 @@ def call(body) {
     body.delegate = pipeline_params
     body()
     
-    String PACKAGE_NAME = "drop"
+    String PACKAGE_NAME = "drop.war"
 
     if(pipeline_params.PACKAGE_NAME){
         PACKAGE_NAME = pipeline_params.PACKAGE_NAME
@@ -27,7 +27,7 @@ def call(body) {
         }
         stage('copy') {
             steps {
-                sh "mv webapp/target/*.war webapp/target/${PACKAGE_NAME}.war'
+                sh "mv webapp/target/*.war webapp/target/${PACKAGE_NAME}'
             }
         }
     }
