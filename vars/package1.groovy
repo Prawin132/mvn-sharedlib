@@ -32,4 +32,3 @@ def call(body) {
         }
     }
 }
-}
