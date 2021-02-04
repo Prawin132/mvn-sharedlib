@@ -3,7 +3,8 @@ def call(body) {
     body.resolveStrategy = Closure.DELEGATE_FIRST
     body.delegate = pipeline_params
     body()
-    
+	
+    String myprop = " "
     
     pipeline {
     agent any
