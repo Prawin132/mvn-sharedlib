@@ -1,1 +1,1 @@
-WAR_NAME=mywar.war
+WAR_NAME=mywar
