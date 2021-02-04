@@ -14,7 +14,7 @@ def call(body) {
 		stage('prepare') {
             steps {
                script {
-                   def props = readProperties file:"/var/lib/jenkins/workspace/${JOB_NAME}@libs/mvn-sharedlib/vars/${myprop}";
+                   def props = readProperties file:"/var/lib/jenkins/workspace/${JOB_NAME}@libs/mvn-sharedlib/vars/TS/Hyd/${myprop}";
                       env['PACKAGE_NAME'] = props['WAR_NAME'];
 
                 }
