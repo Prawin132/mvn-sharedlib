@@ -4,7 +4,8 @@ def call(body) {
     body.delegate = pipeline_params
     body()
 	
-    String myprop = " "
+    //String myprop = " "
+	env.myprop = pipeline_params.myprop
     
     pipeline {
     agent any
